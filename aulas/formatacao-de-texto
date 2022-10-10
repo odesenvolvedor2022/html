@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Caracteres látinos -->
+    <meta charset="UTF-8">
+
+    <!-- Compatibilidade com IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Escala de visualização adaptável -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Descrição do site -->
+    <meta name="description" content="Esse é o meu primeiro site!">
+
+    <!-- Assuntos chaves -->
+    <meta name="keywords" content="programacao,html,css,javascript">
+
+    <!-- Autor -->
+    <meta name="author" content="Osvaldo Junior">
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <title>Formatação de texto - Curso de HTML5</title>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="midias/imagens/logo-html-5.png" alt="html5">
+            CURSO DE HTML
+        </a>
+    </header>
+    
+    <h2>Formatação de texto:</h2>
+
+    <!-- Unordered list: lista desordenada -->
+    <ul>
+        <li> <!-- List item: Item de lista -->
+            <b> <!-- Bold: Negrito-->
+                Negrito
+            </b>
+        </li>
+        
+        <li>
+            <strong> <!-- Strong: Forte -->
+                Forte
+            </strong>
+        </li>
+
+        <li>
+            <i> <!-- Ialic: Itálico -->
+                Itálico
+            </i>
+        </li>
+
+        <li>
+            <u> <!-- Underline: Sublinhado -->
+                Sublinhado
+            </u>
+        </li>
+
+        <li>
+            <small> <!-- Small: Pequeno -->
+                Pequeno
+            </small>
+        </li>
+
+        <li>
+            <del> <!-- deleted: deletado -->
+                Riscado
+            </del>
+        </li>
+
+        <li>
+            <mark> <!-- Marked: Marcado -->
+                Marcado
+            </mark>
+        </li>
+
+        <li>Texto
+            <sup> <!-- Superior -->
+                em cima
+            </sup>
+        </li>
+
+        <li>Texto
+            <sub> <!-- Subscribed: Subscrito -->
+                em baixo
+            </sub>
+        </li>
+        
+        <!-- Abbreviation: Abreviação -->
+        <li>
+            <abbr title="Linguagem de Marcação de HiperTexto">
+                HTML
+            </abbr>
+        </li>
+
+        <!-- Citar algo ou alguém -->
+        <li>Nome de algo ou alguém. Exemplo:
+            <cite> <!-- Cite: Citar -->
+                Titanic, Leonardo di Caprio.
+            </cite>
+        </li>
+
+        <!-- Uma linha de citação -->
+        <li>Uma citação em linha (curta). Exemplo:
+            <q> <!-- Quote: citação -->
+                Citar uma fala ou escrita curta de alguém
+            </q>
+        </li>
+
+        <!-- Bloco de citação -->
+        <li>Um bloco de sitação. Exemplo:
+            <blockquote> <!-- Blockquote: Bloco de citação -->
+                Citar uma fala ou escrita mais longa de alguém
+            </blockquote>
+        </li>
+        
+        <!-- address: endereço - ele quebra texto antes e após dele -->
+        <li>Endereço. Exemplo:
+            <address>
+                Alameda Brasil, nº 123
+            </address>
+        </li>
+
+        <!-- Biderecional order: ordem biderecional -->
+        <li>Texto invertido. Exemplo:
+            <bdo dir="rtl"> <!-- rtl (right to left): da direita para esquerda -->
+                123456789
+            </bdo>
+        </li>
+
+        <li>Texto normal. Exemplo:
+            <bdo dir="ltr"> <!-- rtl (left to right): da esquerda para direita -->
+                123456789
+            </bdo>
+        </li>
+    </ul>
+    
+    <br> <!-- break row: Quebra de linha -->
+
+    <hr> <!-- horizontal row: Linha horizontal -->
+</body>
+</html>

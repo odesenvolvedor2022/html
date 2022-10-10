@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --bg-dark: #151515;
+    --bg-container-dark: #202020;
+    --cor-title-dark: #fff;
+    --cor-text-dark: #bbb;
+    --texto-normal: 1rem;
+    --title-normal: 1.5rem;
+    --padding-container: 20px;
+    --gap-all: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--cor-title-dark);
+}
+
+p{
+    color: var(--cor-text-dark);
+    margin: var(--gap-all) 0;
+}
+
+body{
+    background: var(--bg-dark);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+    gap: var(--gap-all);
+
+    header, aside, footer{
+        padding: var(--padding-container);
+        background: var(--bg-container-dark);
+    }
+
+    header{
+        grid-area: header;
+        display: grid;
+
+        .logo{
+            height: 28px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 10px;
+            align-items: center;
+            font-size: var(--title-normal);
+            color: var(--cor-title-dark);
+
+            img{
+                height: inherit;
+            }
+        }
+    }
+
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        min-height: calc((100vh - 2*var(--gap-all)) - 108px);
+        justify-content: space-around;
+
+        .container{
+            display: grid;
+            width: calc(100vw - 3*var(--gap-all));
+            grid-template-columns: 70% 30%;
+            gap: var(--gap-all);
+            max-width: 1700px;
+            justify-content: center;
+
+            section{
+                display: grid;
+                grid-template-rows: auto 1fr;
+                gap: var(--gap-all);
+                padding: var(--padding-container);
+                background: var(--bg-container-dark);
+                height: 100%;
+                width: 100%;
+                
+                &.principal{
+                    img{
+                        width: 100%;
+                    }
+
+                    h1{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    footer{
+        grid-area: footer;
+    }
+}
