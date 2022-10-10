@@ -48,17 +48,23 @@ body{
         grid-area: header;
         display: grid;
 
-        .logo{
-            height: 28px;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            column-gap: 10px;
-            align-items: center;
-            font-size: var(--title-normal);
-            color: var(--cor-title-dark);
+        section{
+            width: 100%;
+            max-width: calc(1440px - var(--padding-container));
+            margin: 0 auto;
 
-            img{
-                height: inherit;
+            .logo{
+                height: 28px;
+                display: grid;
+                grid-template-columns: auto 1fr;
+                column-gap: 10px;
+                align-items: center;
+                font-size: var(--title-normal);
+                color: var(--cor-title-dark);
+    
+                img{
+                    height: inherit;
+                }
             }
         }
     }
@@ -85,8 +91,10 @@ body{
                 background: var(--bg-container-dark);
                 height: 100%;
                 width: 100%;
+                border-radius: 5px;
                 
                 &.principal{
+                    padding-right: 10px;
                     iframe{
 
                         width: 100%;
@@ -102,7 +110,7 @@ body{
     }
 }
 
-.body-container{
+.body-iframe{
     background: var(--bg-container-dark);
     img{
         width: 100%;
@@ -115,17 +123,18 @@ body{
     //   Scrollbar personalizada
 
     &::-webkit-scrollbar {
-        width: 0.5em;
+        width: 10px;
+        border-radius: 40px;
 
-        &-track {
-            background-color: rgba(0, 0, 0, 0.25);
-            border-radius: 40px;
-        }
+        // &-track {
+        //     background-color: var(--bg-dark);
+        //     border-radius: 40px;
+        // }
 
-        &-thumb {
-            background-color: rgba(255, 255, 255, 0.25);
-            border-radius: 40px;
-        }
+        // &-thumb {
+        //     background-color: rgba(255, 255, 255, 0.25);
+        //     border-radius: 40px;
+        // }
     }
 
     &:hover {

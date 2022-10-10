@@ -45,7 +45,12 @@ body header {
   grid-area: header;
   display: grid;
 }
-body header .logo {
+body header section {
+  width: 100%;
+  max-width: calc(1440px - var(--padding-container));
+  margin: 0 auto;
+}
+body header section .logo {
   height: 28px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -55,7 +60,7 @@ body header .logo {
   font-size: var(--title-normal);
   color: var(--cor-title-dark);
 }
-body header .logo img {
+body header section .logo img {
   height: inherit;
 }
 body main {
@@ -80,6 +85,10 @@ body main .container section {
   background: var(--bg-container-dark);
   height: 100%;
   width: 100%;
+  border-radius: 5px;
+}
+body main .container section.principal {
+  padding-right: 10px;
 }
 body main .container section.principal iframe {
   width: 100%;
@@ -89,27 +98,20 @@ body footer {
   grid-area: footer;
 }
 
-.body-container {
+.body-iframe {
   background: var(--bg-container-dark);
 }
-.body-container img {
+.body-iframe img {
   width: 100%;
 }
-.body-container h1 {
+.body-iframe h1 {
   text-align: center;
 }
-.body-container::-webkit-scrollbar {
-  width: 0.5em;
-}
-.body-container::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.25);
+.body-iframe::-webkit-scrollbar {
+  width: 10px;
   border-radius: 40px;
 }
-.body-container::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 40px;
-}
-.body-container:hover::-webkit-scrollbar-thumb {
+.body-iframe:hover::-webkit-scrollbar-thumb {
   background-color: #ff4d17;
   border-radius: 40px;
 }/*# sourceMappingURL=estilo.css.map */
