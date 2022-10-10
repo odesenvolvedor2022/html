@@ -70,24 +70,46 @@ body main .container {
   width: calc(100vw - 3 * var(--gap-all));
   grid-template-columns: 70% 30%;
   gap: var(--gap-all);
-  max-width: 1700px;
+  max-width: 1400px;
   justify-content: center;
 }
 body main .container section {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: var(--gap-all);
   padding: var(--padding-container);
   background: var(--bg-container-dark);
   height: 100%;
   width: 100%;
 }
-body main .container section.principal img {
+body main .container section.principal iframe {
   width: 100%;
-}
-body main .container section.principal h1 {
-  text-align: center;
+  height: calc(100vh - 4 * var(--gap-all) - 108px);
 }
 body footer {
   grid-area: footer;
+}
+
+.body-container {
+  background: var(--bg-container-dark);
+}
+.body-container img {
+  width: 100%;
+}
+.body-container h1 {
+  text-align: center;
+}
+.body-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+.body-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+.body-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 40px;
+}
+.body-container:hover::-webkit-scrollbar-thumb {
+  background-color: #ff4d17;
+  border-radius: 40px;
 }/*# sourceMappingURL=estilo.css.map */
