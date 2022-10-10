@@ -6,18 +6,21 @@
 }
 
 :root {
+  --cor-primary: #ff4d17;
   --bg-dark: #151515;
   --bg-container-dark: #202020;
   --cor-title-dark: #fff;
   --cor-text-dark: #bbb;
   --texto-normal: 1rem;
   --title-normal: 1.5rem;
+  --title-medio: 2rem;
   --padding-container: 20px;
   --gap-all: 20px;
 }
 
 a {
   text-decoration: none;
+  color: var(--cor-text-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,6 +97,24 @@ body main .container section.principal iframe {
   width: 100%;
   height: calc(100vh - 4 * var(--gap-all) - 108px);
 }
+body main .container section.outras h1 {
+  font-size: var(--title-normal);
+}
+body main .container section.outras nav {
+  display: grid;
+  row-gap: var(--gap-all);
+}
+body main .container section.outras nav li {
+  width: calc(100% - var(--padding-container));
+  transform: translateX(var(--padding-container));
+  margin: var(--padding-container) 0;
+  font-size: var(--texto-normal);
+}
+body main .container section.outras nav ::marker {
+  font-size: var(--texto-normal);
+  color: var(--cor-primary);
+  font-weight: bolder;
+}
 body footer {
   grid-area: footer;
 }
@@ -112,6 +133,6 @@ body footer {
   border-radius: 40px;
 }
 .body-iframe:hover::-webkit-scrollbar-thumb {
-  background-color: #ff4d17;
+  background-color: var(--cor-primary);
   border-radius: 40px;
 }/*# sourceMappingURL=estilo.css.map */
