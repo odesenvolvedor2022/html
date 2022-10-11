@@ -176,4 +176,11 @@ body{
     }
 
     //   Fim da Scrollbar personalizada
+
+    ul{
+        color: var(--cor-text-dark);
+        li{
+            margin: var(--padding-container) 0;
+        }
+    }
 }

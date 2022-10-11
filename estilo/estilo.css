@@ -135,4 +135,10 @@ body footer {
 .body-iframe:hover::-webkit-scrollbar-thumb {
   background-color: var(--cor-primary);
   border-radius: 40px;
+}
+.body-iframe ul {
+  color: var(--cor-text-dark);
+}
+.body-iframe ul li {
+  margin: var(--padding-container) 0;
 }/*# sourceMappingURL=estilo.css.map */
