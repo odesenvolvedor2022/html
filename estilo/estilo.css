@@ -52,11 +52,13 @@ body header section {
   width: 100%;
   max-width: calc(1440px - var(--padding-container));
   margin: 0 auto;
+  display: flex;
 }
 body header section .logo {
+  font-weight: bolder;
   height: 28px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
   -moz-column-gap: 10px;
        column-gap: 10px;
   align-items: center;
@@ -111,7 +113,7 @@ body main .container section.outras nav li {
   font-size: var(--texto-normal);
 }
 body main .container section.outras nav ::marker {
-  font-size: var(--texto-normal);
+  font-size: var(--title-normal);
   color: var(--cor-primary);
   font-weight: bolder;
 }
@@ -124,6 +126,20 @@ body footer {
 }
 .body-iframe img {
   width: 100%;
+}
+.body-iframe .video {
+  background: #ff4d17;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+  border-radius: 5px;
+}
+.body-iframe .video iframe {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  border-radius: inherit;
 }
 .body-iframe h1 {
   text-align: center;

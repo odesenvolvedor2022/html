@@ -55,11 +55,13 @@ body{
             width: 100%;
             max-width: calc(1440px - var(--padding-container));
             margin: 0 auto;
+            display: flex;
 
             .logo{
+                font-weight: bolder;
                 height: 28px;
                 display: grid;
-                grid-template-columns: auto 1fr;
+                grid-template-columns: auto auto;
                 column-gap: 10px;
                 align-items: center;
                 font-size: var(--title-normal);
@@ -125,7 +127,7 @@ body{
                         }
 
                         ::marker{
-                            font-size: var(--texto-normal);
+                            font-size: var(--title-normal);
                             color: var(--cor-primary);
                             font-weight: bolder;
                         }
@@ -144,6 +146,21 @@ body{
     background: var(--bg-container-dark);
     img{
         width: 100%;
+    }
+
+    .video{
+        background: #ff4d17;
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+        border-radius: 5px;
+        iframe{
+            width: 100% !important;
+            height: 100% !important;
+            position: absolute;
+            top: 0;
+            border-radius: inherit;
+        }
     }
 
     h1{
