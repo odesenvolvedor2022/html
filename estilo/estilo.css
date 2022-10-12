@@ -4,6 +4,14 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+*::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 40px;
+}
+*:hover::-webkit-scrollbar-thumb {
+  background-color: var(--cor-primary);
+  border-radius: 40px;
+}
 
 :root {
   --cor-primary: #ff4d17;
@@ -46,27 +54,53 @@ body header, body aside, body footer {
 }
 body header {
   grid-area: header;
-  display: grid;
 }
 body header section {
-  width: 100%;
   max-width: calc(1440px - var(--padding-container));
   margin: 0 auto;
-  display: flex;
 }
-body header section .logo {
+body header section .logo-html, body header section .logo-css, body header section .logo-js {
+  float: left;
+}
+body header section .logo-html a, body header section .logo-css a, body header section .logo-js a {
   font-weight: bolder;
   height: 28px;
-  display: grid;
-  grid-template-columns: auto auto;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  display: flex;
   align-items: center;
   font-size: var(--title-normal);
   color: var(--cor-title-dark);
 }
-body header section .logo img {
+body header section .logo-html a img, body header section .logo-css a img, body header section .logo-js a img {
   height: inherit;
+}
+body .header-html .logo-css, body .header-html .logo-js {
+  float: right;
+}
+body .header-html .logo-css span, body .header-html .logo-js span {
+  display: none;
+}
+body .header-html .logo-css {
+  margin-right: var(--gap-all);
+}
+body .header-css .logo-html, body .header-css .logo-js {
+  float: right;
+}
+body .header-css .logo-html span, body .header-css .logo-js span {
+  display: none;
+}
+body .header-css .logo-js {
+  margin-right: var(--gap-all);
+}
+body .header-js .logo-html, body .header-js .logo-css {
+  float: right;
+}
+body .header-js .logo-html span, body .header-js .logo-css span {
+  display: none;
+}
+body .header-js .logo-html {
+  margin-right: var(--gap-all);
 }
 body main {
   grid-area: main;
@@ -128,7 +162,6 @@ body footer {
   width: 100%;
 }
 .body-iframe .video {
-  background: #ff4d17;
   width: 100%;
   padding-top: 56.25%;
   position: relative;

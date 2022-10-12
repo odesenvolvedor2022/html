@@ -3,7 +3,34 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    //   Scrollbar personalizada
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 40px;
+
+        // &-track {
+        //     background-color: var(--bg-dark);
+        //     border-radius: 40px;
+        // }
+
+        // &-thumb {
+        //     background-color: rgba(255, 255, 255, 0.25);
+        //     border-radius: 40px;
+        // }
+    }
+
+    &:hover {
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--cor-primary);
+            border-radius: 40px;
+        }
+    }
+
+    //   Fim da Scrollbar personalizada
 }
+
 :root{
     --cor-primary: #ff4d17;
     --bg-dark: #151515;
@@ -49,29 +76,80 @@ body{
 
     header{
         grid-area: header;
-        display: grid;
+        // display: grid;
 
         section{
-            width: 100%;
+            // width: 100%;
             max-width: calc(1440px - var(--padding-container));
             margin: 0 auto;
-            display: flex;
+            // display: flex;
+            // column-gap: var(--gap-all);
 
-            .logo{
-                font-weight: bolder;
-                height: 28px;
-                display: grid;
-                grid-template-columns: auto auto;
-                column-gap: 10px;
-                align-items: center;
-                font-size: var(--title-normal);
-                color: var(--cor-title-dark);
-    
-                img{
-                    height: inherit;
+            .logo-html, .logo-css, .logo-js{
+                float: left;
+
+                a{
+                    font-weight: bolder;
+                    height: 28px;
+                    // display: grid;
+                    // grid-template-columns: auto auto auto;
+                    column-gap: 10px;
+                    display: flex;
+                    align-items: center;
+                    font-size: var(--title-normal);
+                    color: var(--cor-title-dark);
+        
+                    img{
+                        height: inherit;
+                    }
                 }
             }
         }
+    }
+
+    .header{
+            &-html{
+
+                .logo-css, .logo-js{
+                    float: right;
+        
+                    span{
+                        display: none;
+                    }
+                }
+        
+                .logo-css{
+                    margin-right: var(--gap-all);
+                }
+            }
+
+            &-css{
+                .logo-html, .logo-js{
+                    float: right;
+        
+                    span{
+                        display: none;
+                    }
+                }
+        
+                .logo-js{
+                    margin-right: var(--gap-all);
+                }
+            }
+
+            &-js{
+                .logo-html, .logo-css{
+                    float: right;
+        
+                    span{
+                        display: none;
+                    }
+                }
+        
+                .logo-html{
+                    margin-right: var(--gap-all);
+                }
+            }
     }
 
     main{
@@ -149,7 +227,6 @@ body{
     }
 
     .video{
-        background: #ff4d17;
         width: 100%;
         padding-top: 56.25%;
         position: relative;
