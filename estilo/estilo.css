@@ -50,7 +50,6 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
   grid-template-areas: "header" "main" "footer";
-  gap: var(--gap-all);
 }
 body header, body aside, body footer {
   padding: var(--padding-container);
@@ -145,4 +144,19 @@ body footer {
 }
 .body-iframe ul li {
   margin: var(--padding-container) 0;
+}
+
+body.normal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.normal div {
+  height: 20vh;
+  display: flex;
+  gap: calc(2 * var(--gap-all));
+  background: var(--bg-dark3);
+  padding: calc(2 * var(--padding-container));
+  border-radius: 20px;
 }/*# sourceMappingURL=estilo.css.map */

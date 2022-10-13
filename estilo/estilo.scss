@@ -69,7 +69,7 @@ body{
     'header'
     'main'
     'footer';
-    gap: var(--gap-all);
+    // gap: var(--gap-all);
 
     header, aside, footer{
         padding: var(--padding-container);
@@ -279,5 +279,24 @@ body{
         li{
             margin: var(--padding-container) 0;
         }
+    }
+}
+
+body.normal{
+    // *{
+    //     border: 1px solid red;
+    // }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div{
+        height: 20vh;
+        display: flex;
+        gap: calc(2*var(--gap-all));
+        background: var(--bg-dark3);
+        padding: calc(2*var(--padding-container));
+        border-radius: 20px;
     }
 }
