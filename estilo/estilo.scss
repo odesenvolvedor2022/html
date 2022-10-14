@@ -44,6 +44,7 @@
     --title-medio: 2rem;
     --padding-container: 20px;
     --gap-all: 20px;
+    --radius1: 20px;
 }
 
 a{
@@ -282,10 +283,7 @@ body{
     }
 }
 
-body.normal{
-    // *{
-    //     border: 1px solid red;
-    // }
+body.one{
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -298,5 +296,95 @@ body.normal{
         background: var(--bg-dark3);
         padding: calc(2*var(--padding-container));
         border-radius: 20px;
+        position: relative;
+    }
+}
+
+
+// Código da página de icones
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --card-height: 25vh;
+    --card-width: calc(2*var(--card-height));
+}
+
+
+body.two {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icones-svg {
+    background: rgba(255,255,255,0.1);
+    background: #151515c9;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: calc(2*var(--padding-container));
+    position: relative;
+    border-radius: var(--radius1);
+    display: flex;
+    gap: calc(2*var(--gap-all));
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(88 199 250 / 100%);
+        transition: color .3s;
+
+        &:before, &:after{
+            // animation: none;
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 100.4%;
+        height: 101.2%;
+        border-radius: var(--radius1);
+        background-image: linear-gradient(var(--rotate), #5ddcff, #5ddcff45 43%, rgba(18, 14, 23, 0));
+        position: absolute;
+        z-index: -1;
+        top: -0.6%;
+        left: -0.2%;
+        animation: spin 3s linear infinite;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: calc(var(--card-height) / (-40));
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        border-radius: 20%;
+        transform: scale(0.9);
+        filter: blur(calc(var(--card-height) / 6));
+        background-image: linear-gradient(var(--rotate), #5ddcff, #5ddcff8f 43%, #4e00c200);
+        opacity: 1;
+        transition: opacity 1s;
+        animation: spin 3s linear infinite;
+    }
+
+    &::before, &::after{
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
     }
 }

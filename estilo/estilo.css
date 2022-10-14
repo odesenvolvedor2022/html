@@ -28,6 +28,7 @@
   --title-medio: 2rem;
   --padding-container: 20px;
   --gap-all: 20px;
+  --radius1: 20px;
 }
 
 a {
@@ -146,17 +147,107 @@ body footer {
   margin: var(--padding-container) 0;
 }
 
-body.normal {
+body.one {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body.normal div {
+body.one div {
   height: 20vh;
   display: flex;
   gap: calc(2 * var(--gap-all));
   background: var(--bg-dark3);
   padding: calc(2 * var(--padding-container));
   border-radius: 20px;
+  position: relative;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+:root {
+  --card-height: 25vh;
+  --card-width: calc(2*var(--card-height));
+}
+
+body.two {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icones-svg {
+  background: rgba(255, 255, 255, 0.1);
+  background: rgba(21, 21, 21, 0.7882352941);
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: calc(2 * var(--padding-container));
+  position: relative;
+  border-radius: var(--radius1);
+  display: flex;
+  gap: calc(2 * var(--gap-all));
+  cursor: pointer;
+}
+.icones-svg:hover {
+  color: rgb(88, 199, 250);
+  transition: color 0.3s;
+}
+.icones-svg:hover:before, .icones-svg:hover:after {
+  opacity: 1;
+}
+.icones-svg::before {
+  content: "";
+  width: 100.4%;
+  height: 101.2%;
+  border-radius: var(--radius1);
+  background-image: linear-gradient(var(--rotate), #5ddcff, rgba(93, 220, 255, 0.2705882353) 43%, rgba(18, 14, 23, 0));
+  position: absolute;
+  z-index: -1;
+  top: -0.6%;
+  left: -0.2%;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+.icones-svg::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / -40);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  border-radius: 20%;
+  transform: scale(0.9);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #5ddcff, rgba(93, 220, 255, 0.5607843137) 43%, rgba(78, 0, 194, 0));
+  opacity: 1;
+  transition: opacity 1s;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+.icones-svg::before, .icones-svg::after {
+  opacity: 0;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }/*# sourceMappingURL=estilo.css.map */
