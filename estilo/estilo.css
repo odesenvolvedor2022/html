@@ -169,8 +169,8 @@ body.one div {
   inherits: false;
 }
 :root {
-  --card-height: 25vh;
-  --card-width: calc(2*var(--card-height));
+  --card-height: 20vh;
+  --card-width: calc(var(--card-height) * 1);
 }
 
 body.two {
@@ -178,50 +178,63 @@ body.two {
   display: flex;
   align-items: center;
   justify-content: center;
+  -moz-column-gap: calc(4 * var(--gap-all));
+       column-gap: calc(4 * var(--gap-all));
+  padding: var(--padding-container);
 }
 
+@media screen and (max-width: 640px) {
+  body.two {
+    flex-direction: column;
+    justify-content: space-evenly;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+}
 .icones-svg {
   background: rgba(255, 255, 255, 0.1);
   background: rgba(21, 21, 21, 0.7882352941);
   width: var(--card-width);
   height: var(--card-height);
-  padding: calc(2 * var(--padding-container));
+  padding: calc(1 * var(--padding-container));
   position: relative;
   border-radius: var(--radius1);
-  display: flex;
-  gap: calc(2 * var(--gap-all));
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.icones-svg svg {
+  display: block;
+  max-width: 70% !important;
 }
 .icones-svg:hover {
   color: rgb(88, 199, 250);
-  transition: color 0.3s;
 }
 .icones-svg:hover:before, .icones-svg:hover:after {
   opacity: 1;
 }
 .icones-svg::before {
   content: "";
-  width: 100.4%;
+  width: 101.2%;
   height: 101.2%;
   border-radius: var(--radius1);
   background-image: linear-gradient(var(--rotate), #5ddcff, rgba(93, 220, 255, 0.2705882353) 43%, rgba(18, 14, 23, 0));
   position: absolute;
   z-index: -1;
   top: -0.6%;
-  left: -0.2%;
+  left: -0.6%;
   -webkit-animation: spin 3s linear infinite;
           animation: spin 3s linear infinite;
 }
 .icones-svg::after {
   position: absolute;
   content: "";
-  top: calc(var(--card-height) / -40);
+  top: 0;
   left: 0;
   right: 0;
   z-index: -1;
   height: 100%;
   width: 100%;
-  border-radius: 20%;
   transform: scale(0.9);
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(var(--rotate), #5ddcff, rgba(93, 220, 255, 0.5607843137) 43%, rgba(78, 0, 194, 0));
